@@ -1,0 +1,101 @@
+example_id,instruction,reference_output,predicted_output,is_json_valid,error_message,predicted_smells,reference_smells,predicted_smell_types,reference_smell_types
+0,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [""High Severity (80%+)""], ""location"": ""middle""}","{""smells"": []}",True,,0,0,,
+1,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [""Medium Severity (40-59%), Maintainability Smells, Performance Smells, Medium-High Severity (60-79%)""], ""location"": ""middle""}","{""smells"": [], ""explanation"": ""No smells detected""}",True,,0,0,,
+2,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [""Maintainability Smells""], ""location"": ""middle""}","{""smells"": [""Maintainability Smells, Medium-High Severity (63-77%)""], ""severity"": 63, ""explanation"": ""Maintainability smells are caused by the fact that the code is not well-structured, hard to read, and hard to understand.""}",True,,0,0,,
+3,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [""High Severity (80%+)""], ""location"": ""middle""}","{""smells"": []}",True,,0,0,,
+4,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [], ""location"": ""none""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,
+5,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [], ""location"": ""none""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,
+6,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","{""smells"": [], ""severity"": 0, ""explanation"": ""No smells detected""}","{""smells"": [], ""severity"": 0, ""explanation"": ""No smells detected""}",True,,0,0,,
+7,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [], ""location"": ""none""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,
+8,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [], ""location"": ""none""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,
+9,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [], ""location"": ""none""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,
+10,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","{""smells"": [""High Severity (80%+), Maintainability Smells""], ""severity"": 83, ""explanation"": ""bugprone-assignment-in-if-condition, cppcoreguidelines-explicit-virtual-functions, readability-implicit-bool-conversion""}","{""smells"": []}",True,,0,0,,
+11,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","{""smells"": [""Performance Smells""], ""severity"": 0, ""explanation"": ""cppcoreguidelines-non-private-member-variables-in-classes, cppcoreguidelines-use-default-member-init""}","{""smells"": [""Maintainability Smells (prioritize these)""], ""severity"": 33, ""explanation"": ""Weak design of object state management""}",True,,0,0,,
+12,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","{""smells"": [""Medium Severity (40-59%)""], ""severity"": 53, ""explanation"": ""readability-identifier-length""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,
+13,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","{""smells"": [""Maintainability Smells""], ""severity"": 0, ""explanation"": ""bugprone-reserved-identifier""}","{""smells"": [""Maintainability Smells, Medium-High Severity (60-79%)""], ""severity"": 63, ""explanation"": ""performance-intensive code smells""}",True,,0,0,,
+14,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","{""smells"": [""Maintainability Smells, High Severity (80%+)""], ""severity"": 83, ""explanation"": ""bugprone-reserved-identifier, cppcoreguidelines-macro-usage""}","{""smells"": []}",True,,0,0,,
+15,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [], ""location"": ""none""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,
+16,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","{""smells"": [""High Severity (80%+)""], ""severity"": 83, ""explanation"": ""bugprone-macro-parentheses""}","{""description"": ""This file contains the implementation of the FFX_FLOAT16 functions."", ""type"": ""generated""}",True,,0,0,,
+17,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [], ""location"": ""none""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,
+18,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [], ""location"": ""none""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,
+19,"Examples:
+1. Smelly full snippet input: ""Detect code smells in this code: <snippet> 
+   Output: {""smells"": [exact Json format]
+2. Clean full snippet input: ""Detect code smells in this C++: <snippet>""
+","<fim_middle>{""smells"": [], ""location"": ""none""}","{""smells"": [], ""location"": ""none""}",True,,0,0,,

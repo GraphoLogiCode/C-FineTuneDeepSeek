@@ -1,0 +1,342 @@
+example_id,instruction,reference_output,predicted_output,is_json_valid,error_message,has_fixed_code,fixed_code_length,reference_code_length
+0,"Refactor this C++ code to fix smells: /*
+** Copyright (C) 2005-2017 Erik de Castro Lopo <erikd@mega-nerd.com>
+**
+** This program is free software; you can redistribute it and/or modify
+** it under the","void GuiMeshRoadEditorCtrl::setSelectedNode( S32 node )
+{
+   if ( mSelNode == node )
+      return;
+
+   mSelNode = node;
+   if ( mSelNode != -1 )   {
+      const MeshRoadNode &curNode = mSelRoad->mNodes[mSelNode];
+
+      MatrixF objMat = mSelRoad->getNodeTransform(mSelNode);      
+      Point3F objScale(curNode.width, 1.0f, curNode.depth );
+      Point3F worldPos = curNode.point;
+      
+      mGizmo->set( objMat, worldPos, objScale );
+   }
+   
+   if ( mSelNode != -1 )      Con::executef( this, ""o","{""smells"": []}",True,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 7 (char 8),,,
+1,"Fill and fix the gap: <fim_prefix>#if ENABLE_THREAD_CACHE
+			(unsigned int)(!iclass ? heap->span_cache.count : heap->span_large_cache[iclass - 1].count),
+			((size_t)atomic_load32(&heap->span_use[icla","<fim_middle>        for ( auto pGlobalTransition : globalTransitions )
+        {
+            if ( pGlobalTransition->m_stateID == stateID )
+            {
+                return pGlobalTransition->GetConnectedInputNode( 0 ) != nullptr;
+            }
+        }","{""smells"": [{""type"": ""Heavyweight Update methods"", ""severity"": 90}]}",True,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 17 (char 18),,,
+2,"Fill and fix the gap: <fim_prefix>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONN","<fim_middle>	if (!PyArg_ParseTupleAndKeywords(args, keywds, ""OO|i"", kwlist, &quatStartObj, &quatEndObj, &physicsClientId))
+	{
+		return NULL;
+	}
+
+	if (quatStartObj)
+	{
+		hasQuatStart = pybullet_internalSetVector4d(quatStartObj, quatStart);
+	}
+
+	if (quatEndObj)
+	{
+		hasQuatEnd = pybullet_internalSetVector4d(quatEndObj, quatEnd);
+	}
+	if (hasQuatStart && hasQuatEnd)
+	{
+		double axisOut[3];
+		b3GetAxisDifferenceQuaternion(quatStart, quatEnd, axisOut);
+		{
+			PyObject* pylist;
+			int i;
+			pylist = Py","{
+            // No parent
+            mDerivedPosition = mPosition;
+            mDerivedScale = mScale;
+            mDerivedOrientation = mOrientation;
+        }",False,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 13 (char 14),,,
+3,"Refactor this C++ code to fix smells: 	0xdf, 0xdf, 0xdf, 0xdf, 0xdf, 0xdf, 0xdf, 0xde, 0xde, 0xde, 0xde, 0xde,
+	0xde, 0xde, 0xde, 0xdd, 0xdd, 0xdd, 0xdd, 0xdd, 0xdd, 0xdd, 0xdd, 0xdc,
+	0xdc, 0xdc, 0xd","bool ObjDecoder::ParseDefinition(Status *status) {
+  char c;
+  parser::SkipWhitespace(buffer());
+  if (!buffer()->Peek(&c)) {
+    // End of file reached?.
+    return false;
+  }  if (c == '#') {
+    // Comment, ignore the line.
+    parser::SkipLine(buffer());
+    return true;
+  }
+  if (ParseVertexPosition(status)) {
+    return true;
+  }
+  if (ParseNormal(status)) {
+    return true;
+  }
+  if (ParseTexCoord(status)) {
+    return true;
+  }
+  if (ParseFace(status)) {
+    return true;
+  }
+  if (ParseM","{""smells"": []}",True,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 5 (char 6),,,
+4,"Refactor this C++ code to fix smells: SimpleOpenGL3App::~SimpleOpenGL3App()
+{
+	delete m_instancingRenderer;
+	delete m_primRenderer;	sth_delete(m_data->m_fontStash);
+	delete m_data->m_renderCallbacks;
+","SimpleOpenGL3App::~SimpleOpenGL3App()
+{
+	delete m_instancingRenderer;
+	delete m_primRenderer;	sth_delete(m_data->m_fontStash);
+	delete m_data->m_renderCallbacks;
+
+	sth_delete(m_data->m_fontStash2);
+	delete m_data->m_renderCallbacks2;
+
+	TwDeleteDefaultFonts();	m_window->closeWindow();
+
+	delete m_window;
+	delete m_data;
+}
+// Explanation: No fixes needed, code is clean.","{
+	delete m_instancingRenderer;
+	delete m_primRenderer;
+	sth_delete(m_data->m_fontStash);
+
+	sth_delete(m_data->m_fontStash2);
+	delete m[3]_delete(m_data->m_renderCallbacks);
+	delete m_window;
+	delete m_data;
+}",False,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 2 (char 3),,,
+5,"Detect code smells in this C++ snippet: void wxRichTextBulletsPage::UpdatePreview()
+{
+    static const wxChar* s_para1 = wxT(""Lorem ipsum dolor sit amet, consectetuer adipiscing elit. \
+Nullam ante sa","{""smells"": [], ""severity"": 0, ""explanation"": ""No smells detected""}","{""smells"": [{""type"": ""Lack of separation of concerns"", ""severity"": 77}, {""type"": ""Bloated asset"", ""severity"": 63}, {""type"": ""Poor design of object state management"", ""severity"": 63}, {""type"": ""Search by string/ID"", ""severity"": 53}, {""type"": ""Dependencies between objects"", ""severity"": 48}, {""type"": ""Prefer static classes instead of singleton"", ""severity"": 33}, {""type"": ""Static coupling"", ""severity"": 32}, {""type"": ""Heavyweight Update methods"", ""severity"": 90}]}",True,,False,0.0,0.0
+6,"Refactor this C++ code to fix smells: bool AnimationMultiMarkerKeyEdit::_set(const StringName &p_name, const Variant &p_value) {
+	EditorUndoRedoManager *undo_redo = EditorUndoRedoManager::get_singleto","bool AnimationMultiMarkerKeyEdit::_set(const StringName &p_name, const Variant &p_value) {
+	EditorUndoRedoManager *undo_redo = EditorUndoRedoManager::get_singleton();
+	if (p_name == ""color"") {
+		Color color = p_value;
+		undo_redo->create_action(TTR(""Multi Edit Marker Color""), UndoRedo::MERGE_ENDS);
+
+		for (const StringName &marker_name : marker_names) {
+			undo_redo->add_do_method(animation.ptr(), ""set_marker_color"", marker_name, color);
+			undo_redo->add_undo_method(animation.ptr(), ""set_marker","{""smells"": []}",True,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 4 (char 5),,,
+7,Fill and fix the gap: <fim_prefix>cla<fim_suffix>,"<fim_middle>ss TeamActionExecutor : public IUnsyncedActionExecutor {
+public:
+	TeamActionExecutor() : IUnsyncedActionExecutor(""Team"", ""Lets the local user change to another team"", true) {	}
+
+	bool Execute(const UnsyncedAction& action) const final override {
+		const int teamId = atoi(action.GetArgs().c_str());
+
+		if (teamHandler.IsValidTeam(teamId)) {
+			clientNet->Send(CBaseNetProtocol::Get().SendJoinTeam(gu->myPlayerNum, teamId));
+		} else {
+			LOG_L(L_WARNING, ""[%s] team %d does not exist"", __f",{ /* reused obj */ /* optimized logic */ },False,JSON parse error: Expecting property name enclosed in double quotes: line 1 column 3 (char 2),,,
+8,Fill and fix the gap: <fim_prefix>static int ssl_check_hs_heade<fim_suffix>,"<fim_middle>r( mbedtls_ssl_context const *ssl )
+{
+    uint32_t msg_len, frag_off, frag_len;
+    msg_len  = ssl_get_hs_total_len( ssl );
+    frag_off = ssl_get_hs_frag_off( ssl );
+    frag_len = ssl_get_hs_frag_len( ssl );
+
+    if( frag_off > msg_len )
+        return( -1 );
+
+    if( frag_len > msg_len - frag_off )
+        return( -1 );
+    if( frag_len + 12 > ssl->in_msglen )
+        return( -1 );
+
+    return( 0 );
+}",{ /* refactored logic */ },False,JSON parse error: Expecting property name enclosed in double quotes: line 1 column 3 (char 2),,,
+9,"Refactor this C++ code to fix smells: id UpdateWorkingValue()
+        {
+            StringID c[4] = { StringID( m_buffers[0] ), StringID( m_buffers[1] ) };
+            // Ensure valid tag state
+      ","id UpdateWorkingValue()
+        {
+            StringID c[4] = { StringID( m_buffers[0] ), StringID( m_buffers[1] ) };
+            // Ensure valid tag state
+            for ( int32_t i = 0; i < 2; i++ )
+            {
+                if ( !c[i].IsValid() )
+                {
+                    for ( int32_t j = i + 1; j < 4; j++ )
+                    {
+                        c[j].Clear();
+                    }
+                    break;
+                }            }
+
+            m_value_imgui = ","{""smells"": [{""type"": ""Lack of separation of concerns"", ""severity"": 77}]}",True,JSON parse error: Expecting property name enclosed in double quotes: line 1 column 3 (char 2),,,
+10,"Fill and fix the gap: <fim_prefix>/****************************************************************************
+ Copyright (c) 2013-2016 Chukong Technologies Inc.
+ Copyright (c) 2017-2018 Xiamen Yaji ","<fim_middle>
+        if (backgroundValue.size() < 3) {
+            return """";
+        }
+       
+        std::string binaryPath = GUIReader::getInstance()->getFilePath();
+        
+        std::string imageFileName_tp;
+        if (!backgroundValue.empty())
+        {
+            if (texType == ui::Widget::TextureResType::LOCAL) {
+                imageFileName_tp = binaryPath + backgroundValue;
+            }
+            else if(texType == ui::Widget::TextureResType::PLIST){",{0},False,JSON parse error: Expecting property name enclosed in double quotes: line 1 column 2 (char 1),,,
+11,"Refactor this C++ code to fix smells: */
+static void pushOntoSorter(
+  Parse *pParse,         /* Parser context */
+  SortCtx *pSort,        /* Information about the ORDER BY clause */
+  Select *pSelec","void PathManager::transmitPath(const U32 id)
+{
+   AssertFatal(mIsServer, ""Error, cannot call transmitNewPath on client path manager!"");
+
+   // Post to all active clients that have already received their paths...   //
+   SimGroup* pClientGroup = Sim::getClientGroup();
+   for (SimGroup::iterator itr = pClientGroup->begin(); itr != pClientGroup->end(); itr++) {
+      NetConnection* nc = dynamic_cast<NetConnection*>(*itr);
+      if (nc && nc->missionPathsSent())
+      {
+         // Transmit the upda",{ GameObject* obj = new GameObject(); /* heavy logic */ },False,JSON parse error: Expecting property name enclosed in double quotes: line 1 column 3 (char 2),,,
+12,"Refactor this C++ code to fix smells: // © 2016 and later: Unicode, Inc. and others.
+// License & terms of use: http://www.unicode.org/copyright.html
+/*
+***********************************************","Error DirAccessUnix::change_dir(String p_dir) {
+	GLOBAL_LOCK_FUNCTION
+
+	p_dir = fix_path(p_dir);
+
+	// prev_dir is the directory we are changing out of
+	String prev_dir;
+	char real_current_dir_name[2048];
+	ERR_FAIL_NULL_V(getcwd(real_current_dir_name, 2048), ERR_BUG);
+	if (prev_dir.append_utf8(real_current_dir_name) != OK) {		prev_dir = real_current_dir_name; //no utf8, maybe latin?
+	}
+
+	// try_dir is the directory we are trying to change into
+	String try_dir = """";
+	if (p_dir.is_relative_path()) ","{""smells"": []}",True,JSON parse error: Expecting property name enclosed in double quotes: line 1 column 4 (char 3),,,
+13,"Fill and fix the gap: <fim_prefix>        static String toString(unsigned long val) { return std::to_string(val); };
+        static String toString(unsigned long long val) { return std::to_string(val)","<fim_middle>        m_guiHelper->resetCamera(dist, yaw, pitch, targetPos[0], targetPos[1], targetPos[2]);
+    }
+    
+    void stepSimulation(float deltaTime)
+    {
+        //use a smaller internal timestep, there are stability issues
+        float internalTimeStep = 1. / 240.f;
+        m_dynamicsWorld->stepSimulation(deltaTime, 4, internalTimeStep);
+    }
+    
+    virtual void renderScene()
+    {
+        CommonDeformableBodyBase::renderScene();
+        btDeformableMultiBodyDynamicsWorld* deforma","{
+            uint32 ret;
+            return parse(val, ret)? ret : defaultValue;
+        }",False,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 13 (char 14),,,
+14,"Refactor this C++ code to fix smells: 
+
+		//! Adds a scene node for rendering using a octree to the scene graph.
+		/** This a good method for rendering
+		scenes with lots of geometry. The octree is bu","class CB3DMeshFileLoader : public IMeshLoader
+{
+public:
+
+	//! Constructor
+	CB3DMeshFileLoader(scene::ISceneManager* smgr);
+
+	//! returns true if the file maybe is able to be loaded by this class
+	//! based on the file extension (e.g. "".bsp"")
+	virtual bool isALoadableFileExtension(const io::path& filename) const _IRR_OVERRIDE_;
+
+	//! creates/loads an animated mesh from the file.
+	//! \return Pointer to the created mesh. Returns 0 if loading failed.
+	//! If you no longer need the mesh, you should ","{""smells"": []}",True,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 1 (char 2),,,
+15,"Fill and fix the gap: <fim_prefix>void TonemapFeatHLSL::processVert( Vector<ShaderComponent*> &componentList, 
+                                    const MaterialFeatureData &fd )
+{
+   // Grab th<fim_s","<fim_middle>e connector
+   ShaderConnector *connectComp = dynamic_cast<ShaderConnector *>( componentList[C_CONNECTOR] );
+   // Set up the second set of texCoords
+   Var *inTex2 = getVertTexCoord( ""texCoord2"" );
+
+   if ( inTex2 )
+   {
+      Var *outTex2 = connectComp->getElement( RT_TEXCOORD );
+      outTex2->setName( ""texCoord2"" );
+      outTex2->setStructName( ""OUT"" );      outTex2->setType( ""float2"" );
+
+      output = new GenOp( ""   @ = @;\r\n"", outTex2, inTex2 );
+   }
+}",{ /* refactored code */ },False,JSON parse error: Expecting property name enclosed in double quotes: line 1 column 3 (char 2),,,
+16,"Fill and fix the gap: <fim_prefix><fim_suffix>			self->invalid_methods.push_back(method);
+
+			method = nullptr;
+		}
+	}
+
+	if (method == nullptr) {
+		method = memnew(GDExtensionMethodBind(p_method_info)","<fim_middle>	p_mat2x4[1] = p_transform.columns[1][0];
+	p_mat2x4[2] = 0;
+	p_mat2x4[3] = p_transform.columns[2][0];
+
+	p_mat2x4[4] = p_transform.columns[0][1];
+	p_mat2x4[5] = p_transform.columns[1][1];","{""smells"": []}",True,,False,0.0,0.0
+17,"Refactor this C++ code to fix smells: void mpack_print_data_to_buffer(const char* data, size_t data_size, char* buffer, size_t buffer_size) {
+    if (buffer_size == 0) {
+        mpack_assert(false, ""b","void mpack_print_data_to_buffer(const char* data, size_t data_size, char* buffer, size_t buffer_size) {
+    if (buffer_size == 0) {
+        mpack_assert(false, ""buffer size is zero!"");        return;
+    }
+
+    mpack_print_t print;
+    mpack_memset(&print, 0, sizeof(print));
+    print.buffer = buffer;
+    print.size = buffer_size;
+    mpack_print_data(data, data_size, &print, 0);
+    mpack_print_append(&print, """",  1); // null-terminator
+    mpack_print_flush(&print);
+
+    // we always make sure","{""smells"": []}",True,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 9 (char 10),,,
+18,"Refactor this C++ code to fix smells: kiss_fft_state *opus_fft_alloc_twiddles(int nfft,void * mem,size_t * lenmem,
+                                        const kiss_fft_state *base, int arch)
+{
+    k","kiss_fft_state *opus_fft_alloc_twiddles(int nfft,void * mem,size_t * lenmem,
+                                        const kiss_fft_state *base, int arch)
+{
+    kiss_fft_state *st=NULL;
+    size_t memneeded = sizeof(struct kiss_fft_state); /* twiddle factors*/
+
+    if ( lenmem==NULL ) {
+        st = ( kiss_fft_state*)KISS_FFT_MALLOC( memneeded );
+    }else{
+        if (mem != NULL && *lenmem >= memneeded)
+            st = (kiss_fft_state*)mem;
+        *lenmem = memneeded;    }
+    if (st) {
+    ","{""smells"": [{""type"": ""Lack of separation of concerns"", ""severity"": 77}, {""type"": ""Allocating and destroying GameObjects in updates"", ""severity"": 90}, {""type"": ""Heavyweight Update methods"", ""severity"": 90}]}",True,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 9 (char 10),,,
+19,"Refactor this C++ code to fix smells: static mbedtls_asn1_named_data *asn1_find_named_data(
+                                               mbedtls_asn1_named_data *list,                               ","static mbedtls_asn1_named_data *asn1_find_named_data(
+                                               mbedtls_asn1_named_data *list,                                               const char *oid, size_t len )
+{
+    while( list != NULL )
+    {
+        if( list->oid.len == len &&
+            memcmp( list->oid.p, oid, len ) == 0 )
+        {
+            break;        }
+
+        list = list->next;
+    }
+
+    return( list );
+}
+// Explanation: No fixes needed, code is clean.","{""smells"": [{""type"": ""Lack of separation of concerns"", ""severity"": 77}, {""type"": ""Static coupling"", ""severity"": 32}, {""type"": ""Allocating and destroying GameObjects in updates"", ""severity"": 90}, {""type"": ""Getting GameObject by name"", ""severity"": 85}, {""type"": ""Heavyweight Update methods"", ""severity"": 90}]}",True,JSON parse error: Expecting property name enclosed in double quotes: line 2 column 13 (char 14),,,

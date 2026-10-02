@@ -1,0 +1,37 @@
+# Reconstructed from the notebook imports and the original July 2025 environment.
+# This file has not been install-tested as a whole.
+#
+# Install PyTorch first, with the build that matches your GPU:
+#   https://pytorch.org/get-started/locally/
+# The models were trained with torch 2.7.1+cu126 on an RTX 4070 Laptop GPU.
+# RTX 50-series cards need a cu128 (or newer) build.
+
+# Versions used for training
+transformers==4.53.2
+peft==0.16.0
+trl==0.19.1
+datasets==4.0.0
+accelerate==1.8.1
+bitsandbytes==0.46.1
+tokenizers==0.21.2
+pandas==2.3.1
+pyarrow==20.0.0
+numpy==2.2.6
+openvino==2025.2.0
+networkx==3.5
+
+# Imported by the notebook; versions were not recorded
+optimum[openvino,onnxruntime]
+evaluate
+scikit-learn
+tensorboard
+rouge-score
+nltk
+sacrebleu
+matplotlib
+seaborn
+tqdm
+jupyter
+
+# Only for scripts/plot_architecture.py (needs Graphviz installed)
+pygraphviz

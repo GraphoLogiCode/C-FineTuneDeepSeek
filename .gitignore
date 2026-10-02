@@ -1,0 +1,29 @@
+# Large, local-only artifacts (see README: "What is not in this repository")
+models/
+data/
+venv-gpu/
+.venv/
+venv/
+
+# Unrelated third-party checkout and reference PDFs
+deepspeed/
+Papers/
+
+# Training by-products, in case they land outside models/ or data/
+runs/
+*.safetensors
+*.bin
+*.arrow
+*.onnx
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# IDE and OS
+.idea/
+.vs/
+.vscode/
+.DS_Store
+Thumbs.db

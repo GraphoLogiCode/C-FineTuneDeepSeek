@@ -1,0 +1,19 @@
+{
+  "detection": {
+    "overall": {
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "per_smell": {}
+  },
+  "fixing": {
+    "rouge": {
+      "rouge1": 0,
+      "rouge2": 0,
+      "rougeL": 0
+    },
+    "bleu": 0,
+    "num_samples": 0
+  }
+}
