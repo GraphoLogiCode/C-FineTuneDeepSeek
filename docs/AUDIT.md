@@ -43,9 +43,16 @@ None of the 16,720 fixing targets has a `fixed_code` field.
 
 | Target | Share |
 | --- | --- |
-| Gap sample → the original middle of the code (plain fill-in-the-middle) | 44.2% |
-| Full snippet → raw code, usually a near copy of the input (median similarity 0.93 on a 3,000-row sample) | 43.8% |
+| Gap sample → raw code to fill the gap | 44.2% |
+| Full snippet → raw code followed by an `// Explanation:` comment | 43.8% |
 | Detection-style label JSON | 11.9% |
+
+A closer look at the full-snippet targets (all 9,218, train and validation together) shows what the "fix" is:
+
+- 50.4% are the input unchanged, with the comment "No fixes needed, code is clean".
+- 49.3% are unrelated code from a different file, with the comment "Fixed … issue". Their identifier overlap with the input matches that of randomly paired rows.
+
+So the rows labelled as fixed pair each input with someone else's code. The gap targets are not fixes either; see [DATASET.md](DATASET.md#what-was-dropped).
 
 ### 5. No evaluation produced a valid score
 
@@ -73,17 +80,21 @@ The split is random by row. About 8% of validation samples share most of their c
 - The four inference scripts are near duplicates of each other.
 - The notebook has hard-coded absolute paths (`C:\Users\...`, `D:\dev\...`).
 
+### 9. Found while rebuilding the dataset
+
+These came out of building `data/clean/detection/`; the measurements are in [DATASET.md](DATASET.md).
+
+- **Half the detection rows cannot be answered.** Gap rows give the code before and after a gap and label the missing middle, so the model is asked about code it cannot see.
+- **Length predicts the label.** A single length threshold scores 89.6% accuracy on the clean test split. Long snippets are almost always labelled smelly and short ones almost never.
+- **Check labels are loosely attached to the code.** For checks that report a visible construct, such as a `#define`, the construct is in the snippet about half the time.
+- **Some code is corrupted.** The legacy builder dropped newlines where it joined chunks, which glued preprocessor directives onto the previous token in 964 of the kept rows. These were repaired.
+
 ## Recommended next steps
 
-1. **Choose one task and drop fixing for now.** Either train a clang-tidy-category detector, which the existing labels support, or create real game-smell labels. Fixing needs genuine before/after pairs.
-2. **Recover the raw pairs.** The raw JSONL is gone; the instruction/output pairs can be extracted from `data/processed/` by stripping the system prompt.
-3. **Build the evaluation first.** Run it on the untuned base model and on a majority-class baseline, so fine-tuning has a number to beat.
-4. **Fix the training setup.**
-   - Cut the system prompt to about 100 tokens.
-   - Use the model's own chat template.
-   - Compute the loss on the answer only.
-   - Truncate the code, never the answer.
-   - Split by engine and hold one or two engines out as a test set.
+1. **Decide whether the labels are worth training on.** The clean detection set is structurally sound, but its labels are clang-tidy categories of uncertain accuracy. The alternative is to relabel: rerun clang-tidy per snippet, or create real game-smell labels.
+2. **Drop fixing until there are real before/after pairs.** Nothing in the current data can be salvaged for it.
+3. **Build the evaluation first.** Run it on the untuned base model, on a majority-class baseline and on the length rule, so fine-tuning has numbers to beat. Report on the length-matched test split as well.
+4. **Fix the training setup.** The settings are listed in [DATASET.md](DATASET.md#using-it-for-fine-tuning): the model's own chat template, answer-only loss, and a context window long enough that nothing is truncated.
 5. **Reconsider the model size.** The 1.3B model, 4-bit loading and batch size 1 were chosen for an 8 GB laptop GPU. A 7B-class code model fits comfortably on a 24–32 GB card.
 
 ## Reproducing the numbers
@@ -92,6 +103,7 @@ The split is random by row. About 8% of validation samples share most of their c
 python scripts/audit/audit_lengths_and_leakage.py   # findings 1, 2, 4, 7
 python scripts/audit/audit_labels.py                # findings 3, 4
 python scripts/audit/read_training_args.py          # findings 1, 8
+python scripts/audit/audit_clean_dataset.py         # finding 9
 ```
 
-The first two need `data/processed/`; the third needs `models/`. Neither folder is in git.
+The first two need `data/processed/`, the third needs `models/`, and the last needs `data/clean/` (built by `scripts/build_clean_dataset.py`). None of these folders is in git.
