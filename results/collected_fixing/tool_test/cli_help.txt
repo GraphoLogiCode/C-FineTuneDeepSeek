@@ -1,0 +1,20 @@
+usage: evaluate_tool_repair.py [-h] [--dataset DATASET] [--out OUT]
+                               [--reference-validation REFERENCE_VALIDATION]
+                               [--config CONFIG] [--clang-tidy CLANG_TIDY]
+                               [--workers WORKERS] [--timeout TIMEOUT]
+
+Run a fresh, read-only clang-tidy repair baseline on held-out functions. Only
+original code, original source context and requested check names enter
+generation. Exported edits are applied to in-memory function bytes. This
+module never asks Clang to write fixes and never writes an engine source file.
+python -m src.evaluation.evaluate_tool_repair --workers 4
+
+options:
+  -h, --help            show this help message and exit
+  --dataset DATASET
+  --out OUT
+  --reference-validation REFERENCE_VALIDATION
+  --config CONFIG
+  --clang-tidy CLANG_TIDY
+  --workers WORKERS
+  --timeout TIMEOUT

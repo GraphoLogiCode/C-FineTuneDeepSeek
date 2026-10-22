@@ -1,0 +1,33 @@
+{
+  "fixture_count": 6,
+  "assertions_per_system": 36,
+  "controls_ok": true,
+  "adapter": "models/collected_fixing_pilot_r16",
+  "systems": {
+    "adapter": {
+      "cases": 6,
+      "compiled": 6,
+      "passed": 6
+    },
+    "intentional_bad": {
+      "cases": 6,
+      "compiled": 6,
+      "passed": 0
+    },
+    "original": {
+      "cases": 6,
+      "compiled": 6,
+      "passed": 6
+    },
+    "reference": {
+      "cases": 6,
+      "compiled": 6,
+      "passed": 6
+    }
+  },
+  "limitations": [
+    "Hand-written illustrative cases, not held-out engine functions.",
+    "Passing finite fixture inputs is not a proof of semantic equivalence.",
+    "This suite checks behavior, not clang-tidy warning removal."
+  ]
+}

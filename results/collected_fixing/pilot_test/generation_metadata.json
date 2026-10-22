@@ -1,0 +1,18 @@
+{
+  "model": "deepseek-ai/deepseek-coder-1.3b-instruct",
+  "model_commit": null,
+  "tokenizer_sha256": "0c3227379ad0d544a55c1f6dd10c74d510f0d80a9dfb90bfd0600edac92b60d9",
+  "adapter_sha256": "f23bacaea014b06390d64660040bbb95d3f8b64f15014d55a3a628552ad8c89c",
+  "dataset_sha256": "51fd9bc5b2de34db4e6e9633d90efcc06e7314a535b5b0fd610ef7911a87b161",
+  "torch": "2.12.0.dev20260325+cu128",
+  "transformers": "5.19.0",
+  "peft": "0.21.2",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "max_new_tokens": 1536,
+  "batch_size": 4,
+  "generation_seconds": {
+    "base": 394.421,
+    "adapter": 247.375
+  },
+  "code_extraction": "single complete C++ fence allowed with surrounding prose; multiple blocks rejected"
+}

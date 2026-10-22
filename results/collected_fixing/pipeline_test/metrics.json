@@ -1,0 +1,297 @@
+{
+  "design": {
+    "task": "detector_to_learned_repair_with_static_validation",
+    "source_dataset": "F:\\PycharmProjects\\DeepSeek_Fine_Tuning\\data\\fixing_pilot\\test.jsonl",
+    "source_dataset_sha256": "51fd9bc5b2de34db4e6e9633d90efcc06e7314a535b5b0fd610ef7911a87b161",
+    "source_manifest_sha256": "aab49c3d939c5cb9416a35613f7cdcaebad7298a07e307012307a46a81731479",
+    "source_rows": 128,
+    "selected_rows": 20,
+    "selected_ids": [
+      "fix-021ee7b301ee",
+      "fix-0934c6c650c8",
+      "fix-199d1eb8fdc6",
+      "fix-19a84ee509de",
+      "fix-1ca61bc8ac85",
+      "fix-31c269426bd1",
+      "fix-59d0db443189",
+      "fix-6d32586daf20",
+      "fix-7b58ad3a30a0",
+      "fix-923b1604274e",
+      "fix-d0cead6ee3c7",
+      "fix-d4cbf3b22e3e",
+      "fix-d50fbeabf101",
+      "fix-d835a9d23353",
+      "fix-d87ba73317b6",
+      "fix-dc4da473dd6e",
+      "fix-dcb3709aca92",
+      "fix-dea187804a1b",
+      "fix-f11b43f4af70",
+      "fix-f3e3c411004e"
+    ],
+    "selection_rule": "All positive rows whose complete recorded fixed_checks are a subset of detector vocabulary intersect actual repair trained_checks",
+    "selected_engines": {
+      "ogre": 8,
+      "spring": 12
+    },
+    "selected_reference_checks": {
+      "readability-else-after-return": 3,
+      "cppcoreguidelines-prefer-member-initializer": 3,
+      "readability-convert-member-functions-to-static": 3,
+      "performance-noexcept-move-constructor": 2,
+      "cppcoreguidelines-init-variables": 2,
+      "readability-simplify-boolean-expr": 2,
+      "bugprone-parent-virtual-call": 1,
+      "performance-unnecessary-value-param": 1,
+      "misc-unused-parameters": 1,
+      "readability-make-member-function-const": 1,
+      "readability-non-const-parameter": 1
+    },
+    "detector_vocabulary": [
+      "bugprone-assignment-in-if-condition",
+      "bugprone-branch-clone",
+      "bugprone-chained-comparison",
+      "bugprone-implicit-widening-of-multiplication-result",
+      "bugprone-integer-division",
+      "bugprone-multi-level-implicit-pointer-conversion",
+      "bugprone-narrowing-conversions",
+      "bugprone-parent-virtual-call",
+      "bugprone-pointer-arithmetic-on-polymorphic-object",
+      "bugprone-signed-char-misuse",
+      "bugprone-switch-missing-default-case",
+      "bugprone-too-small-loop-variable",
+      "bugprone-unchecked-string-to-number-conversion",
+      "bugprone-undefined-memory-manipulation",
+      "bugprone-unhandled-self-assignment",
+      "cppcoreguidelines-avoid-goto",
+      "cppcoreguidelines-init-variables",
+      "cppcoreguidelines-no-malloc",
+      "cppcoreguidelines-owning-memory",
+      "cppcoreguidelines-prefer-member-initializer",
+      "misc-no-recursion",
+      "misc-unused-parameters",
+      "performance-enum-size",
+      "performance-for-range-copy",
+      "performance-no-int-to-ptr",
+      "performance-noexcept-move-constructor",
+      "performance-unnecessary-copy-initialization",
+      "performance-unnecessary-value-param",
+      "readability-avoid-nested-conditional-operator",
+      "readability-container-size-empty",
+      "readability-convert-member-functions-to-static",
+      "readability-else-after-return",
+      "readability-function-cognitive-complexity",
+      "readability-function-size",
+      "readability-make-member-function-const",
+      "readability-misleading-indentation",
+      "readability-non-const-parameter",
+      "readability-redundant-control-flow",
+      "readability-simplify-boolean-expr",
+      "readability-suspicious-call-argument"
+    ],
+    "repair_training_checks": [
+      "bugprone-macro-parentheses",
+      "bugprone-parent-virtual-call",
+      "bugprone-suspicious-string-compare",
+      "cppcoreguidelines-init-variables",
+      "cppcoreguidelines-misleading-capture-default-by-value",
+      "cppcoreguidelines-prefer-member-initializer",
+      "misc-unused-parameters",
+      "modernize-avoid-bind",
+      "modernize-avoid-c-style-cast",
+      "modernize-loop-convert",
+      "modernize-macro-to-enum",
+      "modernize-pass-by-value",
+      "modernize-raw-string-literal",
+      "modernize-redundant-void-arg",
+      "modernize-return-braced-init-list",
+      "modernize-type-traits",
+      "modernize-use-auto",
+      "modernize-use-constraints",
+      "modernize-use-default-member-init",
+      "modernize-use-designated-initializers",
+      "modernize-use-emplace",
+      "modernize-use-equals-default",
+      "modernize-use-integer-sign-comparison",
+      "modernize-use-nullptr",
+      "modernize-use-override",
+      "modernize-use-scoped-lock",
+      "modernize-use-starts-ends-with",
+      "modernize-use-std-numbers",
+      "modernize-use-std-print",
+      "modernize-use-using",
+      "performance-avoid-endl",
+      "performance-faster-string-find",
+      "performance-noexcept-move-constructor",
+      "performance-type-promotion-in-math-fn",
+      "performance-unnecessary-copy-initialization",
+      "performance-unnecessary-value-param",
+      "readability-avoid-const-params-in-decls",
+      "readability-avoid-return-with-void-value",
+      "readability-braces-around-statements",
+      "readability-const-return-type",
+      "readability-container-contains",
+      "readability-container-data-pointer",
+      "readability-container-size-empty",
+      "readability-convert-member-functions-to-static",
+      "readability-delete-null-pointer",
+      "readability-else-after-return",
+      "readability-isolate-declaration",
+      "readability-make-member-function-const",
+      "readability-math-missing-parentheses",
+      "readability-named-parameter",
+      "readability-non-const-parameter",
+      "readability-qualified-auto",
+      "readability-redundant-access-specifiers",
+      "readability-redundant-casting",
+      "readability-redundant-control-flow",
+      "readability-redundant-inline-specifier",
+      "readability-redundant-parentheses",
+      "readability-redundant-string-cstr",
+      "readability-redundant-string-init",
+      "readability-redundant-typename",
+      "readability-simplify-boolean-expr",
+      "readability-static-accessed-through-instance",
+      "readability-static-definition-in-anonymous-namespace",
+      "readability-string-compare",
+      "readability-use-concise-preprocessor-directives",
+      "readability-use-std-min-max"
+    ],
+    "detector": {
+      "path": "F:\\PycharmProjects\\DeepSeek_Fine_Tuning\\models\\collected_detection_lora",
+      "sha256": {
+        "adapter_model.safetensors": "974269992d483661f75464f86f30970013338b5cf8d2b04a3563e0793d35180f",
+        "adapter_config.json": "9421e87c5b8af9698e958d859263912ead60730c89c4f2c4ae2904c93b8be23c",
+        "tokenizer.json": "7da829c59b248b9c7a137a5ed86aa9e3aa69d8c73879794122811808de2006e6",
+        "tokenizer_config.json": "8c9d51c2b0185c2afa2b89754b55da49c30f68991ba8eaf29d9b3977d64744d8",
+        "chat_template.jinja": "cd7db02fded57c5477884ab0977f5509f042dce62c636e894eae856d9b1568a4",
+        "run_settings.json": "e8a394b21aabc936c9662c5670cac71f0992ede61cb7c409a372f6cbe58c0e16"
+      }
+    },
+    "fixer": {
+      "path": "F:\\PycharmProjects\\DeepSeek_Fine_Tuning\\models\\collected_fixing_pilot_r16",
+      "sha256": {
+        "adapter_model.safetensors": "f23bacaea014b06390d64660040bbb95d3f8b64f15014d55a3a628552ad8c89c",
+        "adapter_config.json": "a3538ab6452915fdbe6377b9293ce83be87ee77630f362b3e05bd4503981a541",
+        "tokenizer.json": "7da829c59b248b9c7a137a5ed86aa9e3aa69d8c73879794122811808de2006e6",
+        "tokenizer_config.json": "570fdda17be42d644b58d688196409e3466534837a81976be16cc9684f1a3320",
+        "chat_template.jinja": "cd7db02fded57c5477884ab0977f5509f042dce62c636e894eae856d9b1568a4",
+        "run_settings.json": "74b57e72b3ca15bc0fa5f7f38e5ad2388d19589fc2d39dc8c8ee4c7bb165a4c2",
+        "trained_checks.json": "3aac78a0f616ade9ecedc34415500d61ddb13778373a3ac51eb5de3ece870fae"
+      }
+    },
+    "inference_code_sha256": {
+      "src/detection_prompt.py": "ee7a256271a110c20f09e323bcb8f857ff9e27fa5617cfceed22a207c5c602cd",
+      "src/fixing_prompt.py": "f557ae5a5a7315d347860f1eb2b898f22807673e2f2388cd410e8e7bc2f01de0",
+      "src/inference/detection_demo.py": "70dcb18255d3e142c97fc947860984c1d7cba1d5cf437e832252b58190aff084",
+      "src/inference/fixing.py": "f243f3f333fea6625691cb508cc8b4a8fb6b0261b35fb455a31c24b103ea6306"
+    },
+    "max_new_tokens": 1536,
+    "model_inference_receives_oracle_checks": false,
+    "acceptance": "Complete supported inference plus independent static validation against ORIGINAL row fixed_checks",
+    "limitations": [
+      "Only a small selected positive subset of the frozen stratified pilot TEST split; no broad end-to-end score.",
+      "Selection uses reference check support eligibility; it is conditional on repairable known-check positives.",
+      "No clean-function controls; false-positive repair precision and clean-function safety are unmeasured.",
+      "Recorded fixed_checks are tool-edit targets, not every possible warning; detector precision is not estimated from this partial label set.",
+      "One detector checkpoint, one repair seed, two held-out engines, no behavioral engine tests.",
+      "Static validation uses collection flags and may include stub headers; it is not a native engine build."
+    ]
+  },
+  "manifest_sha256": "0eed130d4f85c89728057f3b76a8ce92b7987b4bf9fdc86ee5fd670061042926",
+  "inference_sha256": "79dd3c753b61f05ce5ecf5effd8b7b9d19ac261e7af2fc5e19f139e4669dcbe7",
+  "results_sha256": "106c31bfcf264953e60f5fe458dbf85fb3dcd93b26095c00a736d348fc284829",
+  "validation_seconds": 19.976,
+  "metrics": {
+    "rows": 20,
+    "pipeline_passes": 7,
+    "pipeline_static_pass_rate": 0.35,
+    "pipeline_status_counts": {
+      "repair_generated": 11,
+      "detector_requested_no_repair": 7,
+      "abstained_unsupported_prediction": 2
+    },
+    "static_validation_status_counts": {
+      "passed_static_validation": 7,
+      "rejected": 13
+    },
+    "changed_rows": 11,
+    "unsupported_prediction_rows": 2,
+    "detector_requested_no_repair_rows": 7,
+    "repair_truncation_rows": 0,
+    "recorded_target_check_recall": 0.6,
+    "recorded_target_checks_detected": 12,
+    "recorded_target_checks_total": 20,
+    "exact_recorded_tool_target_rows": 5,
+    "per_engine": {
+      "ogre": {
+        "rows": 8,
+        "pipeline_passes": 3,
+        "pipeline_pass_rate": 0.375
+      },
+      "spring": {
+        "rows": 12,
+        "pipeline_passes": 4,
+        "pipeline_pass_rate": 0.3333
+      }
+    },
+    "per_reference_check_full_patch_validation": {
+      "bugprone-parent-virtual-call": {
+        "rows": 1,
+        "pipeline_passes": 0,
+        "pipeline_pass_rate": 0.0
+      },
+      "cppcoreguidelines-init-variables": {
+        "rows": 2,
+        "pipeline_passes": 1,
+        "pipeline_pass_rate": 0.5
+      },
+      "cppcoreguidelines-prefer-member-initializer": {
+        "rows": 3,
+        "pipeline_passes": 0,
+        "pipeline_pass_rate": 0.0
+      },
+      "misc-unused-parameters": {
+        "rows": 1,
+        "pipeline_passes": 0,
+        "pipeline_pass_rate": 0.0
+      },
+      "performance-noexcept-move-constructor": {
+        "rows": 2,
+        "pipeline_passes": 2,
+        "pipeline_pass_rate": 1.0
+      },
+      "performance-unnecessary-value-param": {
+        "rows": 1,
+        "pipeline_passes": 0,
+        "pipeline_pass_rate": 0.0
+      },
+      "readability-convert-member-functions-to-static": {
+        "rows": 3,
+        "pipeline_passes": 0,
+        "pipeline_pass_rate": 0.0
+      },
+      "readability-else-after-return": {
+        "rows": 3,
+        "pipeline_passes": 3,
+        "pipeline_pass_rate": 1.0
+      },
+      "readability-make-member-function-const": {
+        "rows": 1,
+        "pipeline_passes": 0,
+        "pipeline_pass_rate": 0.0
+      },
+      "readability-non-const-parameter": {
+        "rows": 1,
+        "pipeline_passes": 0,
+        "pipeline_pass_rate": 0.0
+      },
+      "readability-simplify-boolean-expr": {
+        "rows": 2,
+        "pipeline_passes": 1,
+        "pipeline_pass_rate": 0.5
+      }
+    },
+    "clean_function_precision": null,
+    "behavioral_correctness": "not_tested"
+  }
+}

@@ -3,11 +3,15 @@ models/
 data/
 venv-gpu/
 .venv/
+.venv-demo/
 venv/
 
 # Unrelated third-party checkout and reference PDFs
 deepspeed/
 Papers/
+
+# Scratch renders and screenshots
+tmp/
 
 # Training by-products, in case they land outside models/ or data/
 runs/
