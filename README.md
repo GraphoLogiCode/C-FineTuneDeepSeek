@@ -103,3 +103,15 @@ These concern the 2025 models and data, summarised from [docs/AUDIT.md](docs/AUD
 - The fixing dataset contains no fixed code; half of its "fixed" targets are unrelated code.
 - The saved evaluation metrics were computed over zero samples.
 - The inference scripts use different prompts from the ones used in training, and from the clean dataset.
+
+## License
+
+The code in this repository is released under the [MIT License](LICENSE).
+
+**Ownership.** The work was done as a paid participant in Penn State's [Multi-Campus Research Experience for Undergraduates](https://inclusion.engr.psu.edu/research/multi-campus-research-experience.aspx) (MC REU). Under Penn State policy [IP01](https://policy.psu.edu/policies/ip01), intellectual property created by people paid by the University to do its work belongs to the University. The software is therefore copyright The Pennsylvania State University. IP01 allows University Personnel to share software under open-source licence terms. Scholarly works, such as the reports in `docs/` and the poster, are an exception: IP01 leaves their copyright with the author, Joosung Park, and gives the University a non-exclusive licence to them.
+
+**Third-party material** is not covered by the MIT License:
+
+- **Base model.** [DeepSeek-Coder-1.3B-Instruct](https://huggingface.co/deepseek-ai/deepseek-coder-1.3b-instruct) is released under the MIT License for its code and the [DeepSeek License Agreement](https://huggingface.co/deepseek-ai/deepseek-coder-1.3b-instruct/blob/main/LICENSE) (v1.0) for its weights. Neither the weights nor the fine-tuned adapters are in this repository. The adapters count as derivatives of the model: anyone who distributes them must pass on that licence, including its use restrictions.
+- **Engine source code.** Files under `results/collected_fixing/` and the examples on the poster contain functions from OGRE (MIT) and Spring (GPL-2.0-or-later). The 2025 results and notebook contain short excerpts from the engines as well. These excerpts stay under their engines' own licences. The datasets in `data/`, which hold code from all ten engines, are not published; see [docs/COLLECTION.md](docs/COLLECTION.md#limits).
+- **Logos.** The MC REU logo and the Penn State College of Engineering logo on the poster belong to their owners. Penn State's marks are trademarks, governed by its [visual identity standards](https://brand.psu.edu/visual-identity-standards/university-mark-and-shield).
