@@ -7,6 +7,10 @@ The project fine-tunes [`deepseek-ai/deepseek-coder-1.3b-instruct`](https://hugg
 - **Detection** — given a C++ snippet, output the smells found as JSON.
 - **Fixing** — given a snippet (and detected smells), output refactored code and explanations as JSON.
 
+## Poster
+
+![Research poster: Fine-Tuning LLMs for Code Smell Detection in Game Development](docs/poster.png)
+
 ## Status
 
 The work was done in July 2025 and paused. An audit in October 2026 found that the 2025 adapters did not learn the intended task and that no evaluation produced a valid score. The causes were in the dataset and the training setup, and are documented with measurements in [docs/AUDIT.md](docs/AUDIT.md). The notebook and the scripts under `src/inference/` belong to that 2025 work.
@@ -37,6 +41,7 @@ scripts/
   audit/                                scripts behind the numbers in docs/
   plot_architecture.py                  draws the pipeline diagram
 docs/
+  poster.png                            research poster of the October 2026 results
   AUDIT.md                              findings and recommended next steps
   COLLECTION.md                         the new collection pipeline: how to run it, what it produces
   TRAINING.md                           fine-tuning on the collected data: setup, scoring, results
@@ -86,55 +91,6 @@ pip install -r requirements.txt
 ```
 
 `requirements.txt` was reconstructed from the notebook imports and the original environment; it has not been install-tested as a whole.
-
-## Running
-
-The scripts use paths relative to the repository root.
-
-For an interactive inference demo and a step-by-step study guide, see
-[docs/DETECTION_DEMO.md](docs/DETECTION_DEMO.md). With the demo environment installed:
-
-```powershell
-.venv-demo\Scripts\python.exe demo\detection_app.py --warmup
-```
-
-Open http://127.0.0.1:7860 to inspect prompts, live model output and parsed checks,
-or try an experimental class/type context input.
-
-Collect a fresh dataset from the engine sources (needs the engines on disk and `requirements-collect.txt`; see [docs/COLLECTION.md](docs/COLLECTION.md)):
-
-```bash
-python scripts/collect/run_pipeline.py
-```
-
-Fine-tune and score on the collected detection data (needs `requirements-train.txt` and a GPU; see [docs/TRAINING.md](docs/TRAINING.md)):
-
-```bash
-python src/training/train_lora.py
-python src/evaluation/evaluate_detection.py --name lora --adapter models/collected_detection_lora
-```
-
-Rebuild the cleaned 2025 dataset (needs `data/processed/`):
-
-```bash
-python scripts/build_clean_dataset.py
-```
-
-Run the old adapters (needs `models/`):
-
-```bash
-python src/inference/simple_inference.py
-```
-
-Reproduce the audit numbers:
-
-```bash
-python scripts/audit/audit_lengths_and_leakage.py
-python scripts/audit/audit_labels.py
-python scripts/audit/read_training_args.py
-python scripts/audit/audit_clean_dataset.py
-python scripts/audit/audit_collected_units.py     # for the newly collected data
-```
 
 ## Known issues
 
