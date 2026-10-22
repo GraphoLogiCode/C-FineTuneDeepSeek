@@ -1,0 +1,1258 @@
+{
+ "name": "base_zero_shot",
+ "split": "test",
+ "adapter": null,
+ "model": "deepseek-ai/deepseek-coder-1.3b-instruct",
+ "seconds": 423.8,
+ "length_rule_threshold": 193,
+ "length_rule_label": "readability-function-size",
+ "predicted_checks_outside_vocabulary": {
+  "cppcoreguidelines-pro-type-member-init": 77,
+  "cppcoreguidelines-pro-type-vararg": 53,
+  "readability-magic-numbers": 51,
+  "cppcoreguidelines-pro-type-cstyle-cast": 47,
+  "cppcoreguidelines-pro-bounds-pointer-arithmetic": 47,
+  "cppcoreguidelines-pro-type-const-cast": 35,
+  "cppcoreguidelines-pro-bounds-constant-array-index": 29,
+  "cppcoreguidelines-pro-type-reinterpret-cast": 24,
+  "cppcoreguidelines-pro-bounds-constant-array-argument": 23,
+  "Clang-Tidy: UnusedVariable": 22,
+  "cppcoreguidelines-pro-type-union-access": 21,
+  "readability-implicit-bool-literal": 17,
+  "Clang-Tidy: UninitializedValue": 16,
+  "clang-diagnostic-unused-variable": 13,
+  "Clang-Tidy: Potential Memory Leak": 12
+ },
+ "results": {
+  "all": {
+   "model": {
+    "rows": 3940,
+    "exact": 0.4345,
+    "smelly_accuracy": 0.4665,
+    "smelly_precision": 0.5806,
+    "smelly_recall": 0.059,
+    "smelly_f1": 0.1071,
+    "micro_precision": 0.0018,
+    "micro_recall": 0.0007,
+    "micro_f1": 0.001,
+    "macro_f1": 0.0003,
+    "per_check": {
+     "bugprone-assignment-in-if-condition": {
+      "support": 39,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-branch-clone": {
+      "support": 27,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-implicit-widening-of-multiplication-result": {
+      "support": 63,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-integer-division": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-multi-level-implicit-pointer-conversion": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-narrowing-conversions": {
+      "support": 386,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-parent-virtual-call": {
+      "support": 6,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-pointer-arithmetic-on-polymorphic-object": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-signed-char-misuse": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-switch-missing-default-case": {
+      "support": 50,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-too-small-loop-variable": {
+      "support": 24,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unchecked-string-to-number-conversion": {
+      "support": 9,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-undefined-memory-manipulation": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unhandled-self-assignment": {
+      "support": 8,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-avoid-goto": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-init-variables": {
+      "support": 448,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-no-malloc": {
+      "support": 23,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-owning-memory": {
+      "support": 297,
+      "f1": 0.013,
+      "predicted": 5
+     },
+     "cppcoreguidelines-prefer-member-initializer": {
+      "support": 120,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-no-recursion": {
+      "support": 128,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-unused-parameters": {
+      "support": 194,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-enum-size": {
+      "support": 4,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-for-range-copy": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-no-int-to-ptr": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-noexcept-move-constructor": {
+      "support": 18,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-unnecessary-copy-initialization": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-unnecessary-value-param": {
+      "support": 34,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-avoid-nested-conditional-operator": {
+      "support": 11,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-container-size-empty": {
+      "support": 22,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-convert-member-functions-to-static": {
+      "support": 194,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-else-after-return": {
+      "support": 257,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-cognitive-complexity": {
+      "support": 167,
+      "f1": 0.0,
+      "predicted": 13
+     },
+     "readability-function-size": {
+      "support": 400,
+      "f1": 0.0,
+      "predicted": 8
+     },
+     "readability-make-member-function-const": {
+      "support": 43,
+      "f1": 0.0,
+      "predicted": 1
+     },
+     "readability-misleading-indentation": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 2
+     },
+     "readability-non-const-parameter": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-redundant-control-flow": {
+      "support": 4,
+      "f1": 0.0,
+      "predicted": 2
+     },
+     "readability-simplify-boolean-expr": {
+      "support": 66,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-suspicious-call-argument": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     }
+    },
+    "valid": 0.0556
+   },
+   "baseline: always clean": {
+    "rows": 3940,
+    "exact": 0.4576,
+    "smelly_accuracy": 0.4576,
+    "smelly_precision": 0.0,
+    "smelly_recall": 0.0,
+    "smelly_f1": 0.0,
+    "micro_precision": 0.0,
+    "micro_recall": 0.0,
+    "micro_f1": 0.0,
+    "macro_f1": 0.0,
+    "per_check": {
+     "bugprone-assignment-in-if-condition": {
+      "support": 39,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-branch-clone": {
+      "support": 27,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-implicit-widening-of-multiplication-result": {
+      "support": 63,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-integer-division": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-multi-level-implicit-pointer-conversion": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-narrowing-conversions": {
+      "support": 386,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-parent-virtual-call": {
+      "support": 6,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-pointer-arithmetic-on-polymorphic-object": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-signed-char-misuse": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-switch-missing-default-case": {
+      "support": 50,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-too-small-loop-variable": {
+      "support": 24,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unchecked-string-to-number-conversion": {
+      "support": 9,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-undefined-memory-manipulation": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unhandled-self-assignment": {
+      "support": 8,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-avoid-goto": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-init-variables": {
+      "support": 448,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-no-malloc": {
+      "support": 23,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-owning-memory": {
+      "support": 297,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-prefer-member-initializer": {
+      "support": 120,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-no-recursion": {
+      "support": 128,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-unused-parameters": {
+      "support": 194,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-enum-size": {
+      "support": 4,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-for-range-copy": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-no-int-to-ptr": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-noexcept-move-constructor": {
+      "support": 18,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-unnecessary-copy-initialization": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-unnecessary-value-param": {
+      "support": 34,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-avoid-nested-conditional-operator": {
+      "support": 11,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-container-size-empty": {
+      "support": 22,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-convert-member-functions-to-static": {
+      "support": 194,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-else-after-return": {
+      "support": 257,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-cognitive-complexity": {
+      "support": 167,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-size": {
+      "support": 400,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-make-member-function-const": {
+      "support": 43,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-misleading-indentation": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-non-const-parameter": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-redundant-control-flow": {
+      "support": 4,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-simplify-boolean-expr": {
+      "support": 66,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-suspicious-call-argument": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     }
+    }
+   },
+   "baseline: length rule": {
+    "rows": 3940,
+    "exact": 0.1774,
+    "smelly_accuracy": 0.5668,
+    "smelly_precision": 0.5753,
+    "smelly_recall": 0.7684,
+    "smelly_f1": 0.658,
+    "micro_precision": 0.1381,
+    "micro_recall": 0.1281,
+    "micro_f1": 0.1329,
+    "macro_f1": 0.0062,
+    "per_check": {
+     "bugprone-assignment-in-if-condition": {
+      "support": 39,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-branch-clone": {
+      "support": 27,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-implicit-widening-of-multiplication-result": {
+      "support": 63,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-integer-division": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-multi-level-implicit-pointer-conversion": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-narrowing-conversions": {
+      "support": 386,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-parent-virtual-call": {
+      "support": 6,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-pointer-arithmetic-on-polymorphic-object": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-signed-char-misuse": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-switch-missing-default-case": {
+      "support": 50,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-too-small-loop-variable": {
+      "support": 24,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unchecked-string-to-number-conversion": {
+      "support": 9,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-undefined-memory-manipulation": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unhandled-self-assignment": {
+      "support": 8,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-avoid-goto": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-init-variables": {
+      "support": 448,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-no-malloc": {
+      "support": 23,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-owning-memory": {
+      "support": 297,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-prefer-member-initializer": {
+      "support": 120,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-no-recursion": {
+      "support": 128,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-unused-parameters": {
+      "support": 194,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-enum-size": {
+      "support": 4,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-for-range-copy": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-no-int-to-ptr": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-noexcept-move-constructor": {
+      "support": 18,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-unnecessary-copy-initialization": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-unnecessary-value-param": {
+      "support": 34,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-avoid-nested-conditional-operator": {
+      "support": 11,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-container-size-empty": {
+      "support": 22,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-convert-member-functions-to-static": {
+      "support": 194,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-else-after-return": {
+      "support": 257,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-cognitive-complexity": {
+      "support": 167,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-size": {
+      "support": 400,
+      "f1": 0.242,
+      "predicted": 2854
+     },
+     "readability-make-member-function-const": {
+      "support": 43,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-misleading-indentation": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-non-const-parameter": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-redundant-control-flow": {
+      "support": 4,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-simplify-boolean-expr": {
+      "support": 66,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-suspicious-call-argument": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     }
+    }
+   }
+  },
+  "length_matched": {
+   "model": {
+    "rows": 3340,
+    "exact": 0.4772,
+    "smelly_accuracy": 0.5117,
+    "smelly_precision": 0.6021,
+    "smelly_recall": 0.0689,
+    "smelly_f1": 0.1236,
+    "micro_precision": 0.0021,
+    "micro_recall": 0.0009,
+    "micro_f1": 0.0013,
+    "macro_f1": 0.0004,
+    "per_check": {
+     "bugprone-assignment-in-if-condition": {
+      "support": 28,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-branch-clone": {
+      "support": 13,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-implicit-widening-of-multiplication-result": {
+      "support": 39,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-integer-division": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-multi-level-implicit-pointer-conversion": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-narrowing-conversions": {
+      "support": 274,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-parent-virtual-call": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-pointer-arithmetic-on-polymorphic-object": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-signed-char-misuse": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-switch-missing-default-case": {
+      "support": 28,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-too-small-loop-variable": {
+      "support": 13,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unchecked-string-to-number-conversion": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unhandled-self-assignment": {
+      "support": 7,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-avoid-goto": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-init-variables": {
+      "support": 305,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-no-malloc": {
+      "support": 13,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-owning-memory": {
+      "support": 254,
+      "f1": 0.015,
+      "predicted": 5
+     },
+     "cppcoreguidelines-prefer-member-initializer": {
+      "support": 110,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-no-recursion": {
+      "support": 99,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-unused-parameters": {
+      "support": 163,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-enum-size": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-for-range-copy": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-no-int-to-ptr": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-noexcept-move-constructor": {
+      "support": 16,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-unnecessary-value-param": {
+      "support": 32,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-avoid-nested-conditional-operator": {
+      "support": 9,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-container-size-empty": {
+      "support": 17,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-convert-member-functions-to-static": {
+      "support": 166,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-else-after-return": {
+      "support": 222,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-cognitive-complexity": {
+      "support": 48,
+      "f1": 0.0,
+      "predicted": 12
+     },
+     "readability-function-size": {
+      "support": 179,
+      "f1": 0.0,
+      "predicted": 7
+     },
+     "readability-make-member-function-const": {
+      "support": 30,
+      "f1": 0.0,
+      "predicted": 1
+     },
+     "readability-misleading-indentation": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 1
+     },
+     "readability-non-const-parameter": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-redundant-control-flow": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 1
+     },
+     "readability-simplify-boolean-expr": {
+      "support": 50,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-suspicious-call-argument": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     }
+    },
+    "valid": 0.0578
+   },
+   "baseline: always clean": {
+    "rows": 3340,
+    "exact": 0.5,
+    "smelly_accuracy": 0.5,
+    "smelly_precision": 0.0,
+    "smelly_recall": 0.0,
+    "smelly_f1": 0.0,
+    "micro_precision": 0.0,
+    "micro_recall": 0.0,
+    "micro_f1": 0.0,
+    "macro_f1": 0.0,
+    "per_check": {
+     "bugprone-assignment-in-if-condition": {
+      "support": 28,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-branch-clone": {
+      "support": 13,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-implicit-widening-of-multiplication-result": {
+      "support": 39,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-integer-division": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-multi-level-implicit-pointer-conversion": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-narrowing-conversions": {
+      "support": 274,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-parent-virtual-call": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-pointer-arithmetic-on-polymorphic-object": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-signed-char-misuse": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-switch-missing-default-case": {
+      "support": 28,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-too-small-loop-variable": {
+      "support": 13,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unchecked-string-to-number-conversion": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unhandled-self-assignment": {
+      "support": 7,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-avoid-goto": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-init-variables": {
+      "support": 305,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-no-malloc": {
+      "support": 13,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-owning-memory": {
+      "support": 254,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-prefer-member-initializer": {
+      "support": 110,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-no-recursion": {
+      "support": 99,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-unused-parameters": {
+      "support": 163,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-enum-size": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-for-range-copy": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-no-int-to-ptr": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-noexcept-move-constructor": {
+      "support": 16,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-unnecessary-value-param": {
+      "support": 32,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-avoid-nested-conditional-operator": {
+      "support": 9,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-container-size-empty": {
+      "support": 17,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-convert-member-functions-to-static": {
+      "support": 166,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-else-after-return": {
+      "support": 222,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-cognitive-complexity": {
+      "support": 48,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-size": {
+      "support": 179,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-make-member-function-const": {
+      "support": 30,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-misleading-indentation": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-non-const-parameter": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-redundant-control-flow": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-simplify-boolean-expr": {
+      "support": 50,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-suspicious-call-argument": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     }
+    }
+   },
+   "baseline: length rule": {
+    "rows": 3340,
+    "exact": 0.1581,
+    "smelly_accuracy": 0.4988,
+    "smelly_precision": 0.4992,
+    "smelly_recall": 0.7234,
+    "smelly_f1": 0.5907,
+    "micro_precision": 0.0719,
+    "micro_recall": 0.081,
+    "micro_f1": 0.0762,
+    "macro_f1": 0.0036,
+    "per_check": {
+     "bugprone-assignment-in-if-condition": {
+      "support": 28,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-branch-clone": {
+      "support": 13,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-implicit-widening-of-multiplication-result": {
+      "support": 39,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-integer-division": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-multi-level-implicit-pointer-conversion": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-narrowing-conversions": {
+      "support": 274,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-parent-virtual-call": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-pointer-arithmetic-on-polymorphic-object": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-signed-char-misuse": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-switch-missing-default-case": {
+      "support": 28,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-too-small-loop-variable": {
+      "support": 13,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unchecked-string-to-number-conversion": {
+      "support": 5,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "bugprone-unhandled-self-assignment": {
+      "support": 7,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-avoid-goto": {
+      "support": 3,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-init-variables": {
+      "support": 305,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-no-malloc": {
+      "support": 13,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-owning-memory": {
+      "support": 254,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "cppcoreguidelines-prefer-member-initializer": {
+      "support": 110,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-no-recursion": {
+      "support": 99,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "misc-unused-parameters": {
+      "support": 163,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-enum-size": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-for-range-copy": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-no-int-to-ptr": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-noexcept-move-constructor": {
+      "support": 16,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "performance-unnecessary-value-param": {
+      "support": 32,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-avoid-nested-conditional-operator": {
+      "support": 9,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-container-size-empty": {
+      "support": 17,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-convert-member-functions-to-static": {
+      "support": 166,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-else-after-return": {
+      "support": 222,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-cognitive-complexity": {
+      "support": 48,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-function-size": {
+      "support": 179,
+      "f1": 0.134,
+      "predicted": 2420
+     },
+     "readability-make-member-function-const": {
+      "support": 30,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-misleading-indentation": {
+      "support": 1,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-non-const-parameter": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-redundant-control-flow": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-simplify-boolean-expr": {
+      "support": 50,
+      "f1": 0.0,
+      "predicted": 0
+     },
+     "readability-suspicious-call-argument": {
+      "support": 2,
+      "f1": 0.0,
+      "predicted": 0
+     }
+    }
+   }
+  }
+ }
+}

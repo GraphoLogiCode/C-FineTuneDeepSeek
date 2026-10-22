@@ -1,0 +1,12 @@
+{
+  "rows": 128,
+  "unique_ids": 128,
+  "source_files_checked_unchanged": 106,
+  "candidate_hashes_match": true,
+  "all_applied_edits_within_function": true,
+  "requested_check_sets_match_manifest": true,
+  "static_passes": 101,
+  "generation_abstentions": 5,
+  "predictions_sha256": "80bd9e8ecf5051d3c7ffa5d58518ecad9e94176a45fe29bba342fd7d2634044e",
+  "metrics_sha256": "962ae4b2b9bd76c2fed7a7c19b9113238531f640050b758e070233b9d545e647"
+}

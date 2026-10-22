@@ -1,0 +1,550 @@
+{
+  "task": "oracle_check_conditional_repair",
+  "system": "fresh_clang_tidy",
+  "system_label": "fresh clang-tidy, same function-only edit scope",
+  "edit_scope": "function_only",
+  "dataset": "F:\\PycharmProjects\\DeepSeek_Fine_Tuning\\data\\fixing_pilot\\test.jsonl",
+  "dataset_sha256": "51fd9bc5b2de34db4e6e9633d90efcc06e7314a535b5b0fd610ef7911a87b161",
+  "summary": {
+    "rows": 128,
+    "exact_reference_rate": 0.5469,
+    "changed_rate": 0.9609,
+    "parse_rate": 0.8672,
+    "truncation_rate": 0.0,
+    "fresh_snippet_parse_regression_rate": 0.0078,
+    "static_validation_rows": 128,
+    "static_status_counts": {
+      "passed_static_validation": 101,
+      "rejected": 22,
+      "inconclusive": 5
+    },
+    "static_pass_rate_over_all_attempts": 0.7891,
+    "static_pass_wilson_95": [
+      0.7105,
+      0.8508
+    ],
+    "per_engine": {
+      "ogre": {
+        "rows": 70,
+        "passed": 57,
+        "pass_rate": 0.8143,
+        "wilson_95": [
+          0.7077,
+          0.8881
+        ]
+      },
+      "spring": {
+        "rows": 58,
+        "passed": 44,
+        "pass_rate": 0.7586,
+        "wilson_95": [
+          0.6347,
+          0.8504
+        ]
+      }
+    },
+    "per_requested_check_full_patch_validation": {
+      "bugprone-parent-virtual-call": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "bugprone-suspicious-string-compare": {
+        "rows": 1,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.7935
+        ]
+      },
+      "cppcoreguidelines-init-variables": {
+        "rows": 13,
+        "passed": 10,
+        "pass_rate": 0.7692,
+        "wilson_95": [
+          0.4974,
+          0.9182
+        ]
+      },
+      "cppcoreguidelines-prefer-member-initializer": {
+        "rows": 4,
+        "passed": 3,
+        "pass_rate": 0.75,
+        "wilson_95": [
+          0.3006,
+          0.9544
+        ]
+      },
+      "misc-unused-parameters": {
+        "rows": 7,
+        "passed": 6,
+        "pass_rate": 0.8571,
+        "wilson_95": [
+          0.4869,
+          0.9743
+        ]
+      },
+      "modernize-avoid-c-style-cast": {
+        "rows": 18,
+        "passed": 12,
+        "pass_rate": 0.6667,
+        "wilson_95": [
+          0.4375,
+          0.8372
+        ]
+      },
+      "modernize-loop-convert": {
+        "rows": 6,
+        "passed": 2,
+        "pass_rate": 0.3333,
+        "wilson_95": [
+          0.0968,
+          0.7
+        ]
+      },
+      "modernize-pass-by-value": {
+        "rows": 4,
+        "passed": 2,
+        "pass_rate": 0.5,
+        "wilson_95": [
+          0.15,
+          0.85
+        ]
+      },
+      "modernize-raw-string-literal": {
+        "rows": 2,
+        "passed": 1,
+        "pass_rate": 0.5,
+        "wilson_95": [
+          0.0945,
+          0.9055
+        ]
+      },
+      "modernize-redundant-void-arg": {
+        "rows": 3,
+        "passed": 2,
+        "pass_rate": 0.6667,
+        "wilson_95": [
+          0.2077,
+          0.9385
+        ]
+      },
+      "modernize-return-braced-init-list": {
+        "rows": 5,
+        "passed": 4,
+        "pass_rate": 0.8,
+        "wilson_95": [
+          0.3755,
+          0.9638
+        ]
+      },
+      "modernize-type-traits": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "modernize-use-auto": {
+        "rows": 22,
+        "passed": 18,
+        "pass_rate": 0.8182,
+        "wilson_95": [
+          0.6148,
+          0.9269
+        ]
+      },
+      "modernize-use-default-member-init": {
+        "rows": 1,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.7935
+        ]
+      },
+      "modernize-use-emplace": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "modernize-use-equals-default": {
+        "rows": 5,
+        "passed": 3,
+        "pass_rate": 0.6,
+        "wilson_95": [
+          0.2307,
+          0.8824
+        ]
+      },
+      "modernize-use-nullptr": {
+        "rows": 9,
+        "passed": 8,
+        "pass_rate": 0.8889,
+        "wilson_95": [
+          0.565,
+          0.9801
+        ]
+      },
+      "modernize-use-override": {
+        "rows": 3,
+        "passed": 2,
+        "pass_rate": 0.6667,
+        "wilson_95": [
+          0.2077,
+          0.9385
+        ]
+      },
+      "modernize-use-scoped-lock": {
+        "rows": 3,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.5615
+        ]
+      },
+      "modernize-use-using": {
+        "rows": 2,
+        "passed": 1,
+        "pass_rate": 0.5,
+        "wilson_95": [
+          0.0945,
+          0.9055
+        ]
+      },
+      "performance-avoid-endl": {
+        "rows": 3,
+        "passed": 3,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.4385,
+          1.0
+        ]
+      },
+      "performance-faster-string-find": {
+        "rows": 1,
+        "passed": 1,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.2065,
+          1.0
+        ]
+      },
+      "performance-noexcept-move-constructor": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "performance-unnecessary-copy-initialization": {
+        "rows": 1,
+        "passed": 1,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.2065,
+          1.0
+        ]
+      },
+      "performance-unnecessary-value-param": {
+        "rows": 4,
+        "passed": 3,
+        "pass_rate": 0.75,
+        "wilson_95": [
+          0.3006,
+          0.9544
+        ]
+      },
+      "readability-avoid-return-with-void-value": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "readability-braces-around-statements": {
+        "rows": 49,
+        "passed": 37,
+        "pass_rate": 0.7551,
+        "wilson_95": [
+          0.6191,
+          0.854
+        ]
+      },
+      "readability-const-return-type": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "readability-container-contains": {
+        "rows": 2,
+        "passed": 1,
+        "pass_rate": 0.5,
+        "wilson_95": [
+          0.0945,
+          0.9055
+        ]
+      },
+      "readability-container-data-pointer": {
+        "rows": 4,
+        "passed": 3,
+        "pass_rate": 0.75,
+        "wilson_95": [
+          0.3006,
+          0.9544
+        ]
+      },
+      "readability-container-size-empty": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "readability-convert-member-functions-to-static": {
+        "rows": 4,
+        "passed": 3,
+        "pass_rate": 0.75,
+        "wilson_95": [
+          0.3006,
+          0.9544
+        ]
+      },
+      "readability-else-after-return": {
+        "rows": 6,
+        "passed": 5,
+        "pass_rate": 0.8333,
+        "wilson_95": [
+          0.4365,
+          0.9699
+        ]
+      },
+      "readability-isolate-declaration": {
+        "rows": 9,
+        "passed": 6,
+        "pass_rate": 0.6667,
+        "wilson_95": [
+          0.3542,
+          0.8794
+        ]
+      },
+      "readability-make-member-function-const": {
+        "rows": 1,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.7935
+        ]
+      },
+      "readability-math-missing-parentheses": {
+        "rows": 11,
+        "passed": 8,
+        "pass_rate": 0.7273,
+        "wilson_95": [
+          0.4344,
+          0.9025
+        ]
+      },
+      "readability-named-parameter": {
+        "rows": 3,
+        "passed": 3,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.4385,
+          1.0
+        ]
+      },
+      "readability-non-const-parameter": {
+        "rows": 2,
+        "passed": 1,
+        "pass_rate": 0.5,
+        "wilson_95": [
+          0.0945,
+          0.9055
+        ]
+      },
+      "readability-qualified-auto": {
+        "rows": 9,
+        "passed": 9,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.7009,
+          1.0
+        ]
+      },
+      "readability-redundant-access-specifiers": {
+        "rows": 2,
+        "passed": 1,
+        "pass_rate": 0.5,
+        "wilson_95": [
+          0.0945,
+          0.9055
+        ]
+      },
+      "readability-redundant-casting": {
+        "rows": 1,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.7935
+        ]
+      },
+      "readability-redundant-control-flow": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "readability-redundant-inline-specifier": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "readability-redundant-parentheses": {
+        "rows": 3,
+        "passed": 3,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.4385,
+          1.0
+        ]
+      },
+      "readability-redundant-string-init": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "readability-redundant-typename": {
+        "rows": 1,
+        "passed": 1,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.2065,
+          1.0
+        ]
+      },
+      "readability-simplify-boolean-expr": {
+        "rows": 3,
+        "passed": 3,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.4385,
+          1.0
+        ]
+      },
+      "readability-static-accessed-through-instance": {
+        "rows": 2,
+        "passed": 1,
+        "pass_rate": 0.5,
+        "wilson_95": [
+          0.0945,
+          0.9055
+        ]
+      },
+      "readability-use-concise-preprocessor-directives": {
+        "rows": 2,
+        "passed": 2,
+        "pass_rate": 1.0,
+        "wilson_95": [
+          0.3424,
+          1.0
+        ]
+      },
+      "readability-use-std-min-max": {
+        "rows": 2,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.6576
+        ]
+      }
+    },
+    "behavioral_correctness": "not_tested_on_engine_functions"
+  },
+  "generation_status_counts": {
+    "generated": 123,
+    "conflicting_edits": 2,
+    "context_needed": 3
+  },
+  "generation_abstentions": {
+    "rows": 5,
+    "status_counts": {
+      "conflicting_edits": 2,
+      "context_needed": 3
+    }
+  },
+  "candidate_static_validation": {
+    "rows": 123,
+    "status_counts": {
+      "passed_static_validation": 101,
+      "rejected": 22
+    }
+  },
+  "validation_cache_reuse": {
+    "fresh": 53,
+    "reference": 70,
+    "not_generated": 5
+  },
+  "generation_seconds_total": 229.326,
+  "generation_seconds_mean": 1.7916,
+  "validation_seconds_total": 344.237,
+  "wall_seconds": 144.426,
+  "method": {
+    "generation_inputs": "original full source plus supplied check names",
+    "checks": "requested checks only, independently of broad validation checks",
+    "edits": "fresh structured Clang replacements, applied only in memory inside original function",
+    "source_write_mode": "never writes engine sources; export-fixes only",
+    "uses_reference_as_generation_input": false,
+    "identical_validation_reuse": "exact function bytes and matching source, engine commit, tool and flags provenance"
+  },
+  "limitations": [
+    "Oracle check names are supplied; this is not an end-to-end detection score.",
+    "Collection uses inferred flags and may include empty header stubs.",
+    "Validation covers compiler success and enabled diagnostics, not behavioral correctness.",
+    "Standalone snippet parsing can fail on macros and defaulted members that compile in source context.",
+    "Overlapping or external edits are not guessed and count as unsuccessful attempts.",
+    "External include edits are scope abstentions; full-file tool repair performance is unmeasured.",
+    "Generation timing includes provenance loading and exports; total sums overlap across workers."
+  ],
+  "reference_validation_file": "F:\\PycharmProjects\\DeepSeek_Fine_Tuning\\data\\fixing_pilot\\reference_static_validation.jsonl",
+  "reference_validation_sha256": "b679e2215ff0294545439b97f537fb5cf93730e90c86f3bb609056adfdae941e",
+  "generation_function_sha256": "d4cce9d4545288de0f989425d3dba71597e058d6c8d14b2679ac8d79eb2c6634",
+  "edit_application_function_sha256": "ecabacf8c16fa42f14a601fe37b8a7b94183a2ccd0a1ed64193a953ec1899c00",
+  "artifact_postprocessing": "Added descriptive snippet-parse fields and explicit scope labels after generation. Candidates and static-validation outcomes unchanged."
+}

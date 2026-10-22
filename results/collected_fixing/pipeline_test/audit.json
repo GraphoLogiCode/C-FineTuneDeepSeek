@@ -1,0 +1,122 @@
+{
+  "rows": 20,
+  "unique_ids": 20,
+  "frozen_selection_complete": true,
+  "source_files_unchanged": {
+    "D:\\dev\\game engine source code\\spring\\rts\\Rendering\\IconHandler.h": {
+      "sha1": "1f298434456f7fa8ea557d9bfef4b5c4fc1ccf6b",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\ogre\\Components\\Overlay\\src\\OgrePanelOverlayElement.cpp": {
+      "sha1": "75f26b01bb0a050ebbc07e2da0d2c18bb371bbe0",
+      "engine_commit": "b74c0615c349b06dccb09b6d96f976bc56bb9a25",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\Sim\\Units\\CommandAI\\CommandQueue.h": {
+      "sha1": "48208014bb1a9567183c1d0d395a56d43f5e0693",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\Rendering\\Env\\Decals\\LegacyTrackHandler.h": {
+      "sha1": "d9240a231a33bb47199fc870550cafc4ad17448e",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\Map\\SMF\\SMFMapFile.cpp": {
+      "sha1": "7b83557f9be03b0d12fe530ebb1aa00d945d23f2",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\ExternalAI\\AIInterfaceKey.cpp": {
+      "sha1": "227c2f8e070c772a13bebabca74a380a9f7265d6",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\Sim\\Weapons\\BeamLaser.h": {
+      "sha1": "dae73265f773dc81cd5cf1b2f2431d7d30072c82",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\System\\EventClient.h": {
+      "sha1": "53cbf3fba1ca42d88b50437d7eb4d97cb953516d",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\ogre\\Components\\Bites\\include\\OgreCameraMan.h": {
+      "sha1": "86a38165615e864a5bdb97e4ebdaaab986f76091",
+      "engine_commit": "b74c0615c349b06dccb09b6d96f976bc56bb9a25",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\ExternalAI\\AIInterfaceLibrary.cpp": {
+      "sha1": "3b5aab98b368ab88589cb7fe34e1a0feeea4a3f3",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\ogre\\OgreMain\\src\\OgreCamera.cpp": {
+      "sha1": "f880151e1bb820627b9c6d3d25cad3129d850f77",
+      "engine_commit": "b74c0615c349b06dccb09b6d96f976bc56bb9a25",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\System\\creg\\Serializer.cpp": {
+      "sha1": "787533850e03a1e2600056b99dea031aa0e8de7d",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\ogre\\OgreMain\\src\\OgreGpuProgramManager.cpp": {
+      "sha1": "ed2def3afaa60d40a403380087694ab86abd556b",
+      "engine_commit": "b74c0615c349b06dccb09b6d96f976bc56bb9a25",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\Rendering\\Models\\s3o.h": {
+      "sha1": "ae9c81751e16e5cc8c85f04568f79ec1776899f5",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\Sim\\Units\\BuildInfo.h": {
+      "sha1": "6711c8bf918870b5f2a1000a6e1d27a3f381832d",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\ogre\\RenderSystems\\GL\\src\\atifs\\src\\Compiler2Pass.cpp": {
+      "sha1": "1d0b28b7a47ab06291829a77ded9c01942817a6f",
+      "engine_commit": "b74c0615c349b06dccb09b6d96f976bc56bb9a25",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\spring\\rts\\System\\creg\\TypeDeduction.h": {
+      "sha1": "6b9bde751e87b6ebe559b61693bd12acbd6c0e81",
+      "engine_commit": "2925abc99980eb3b08f421a6a45a184938611c40",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\ogre\\OgreMain\\src\\OgreAutoParamDataSource.cpp": {
+      "sha1": "9761513ef4ac63f844de5eba6eed16c4ef84ca95",
+      "engine_commit": "b74c0615c349b06dccb09b6d96f976bc56bb9a25",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\ogre\\Components\\Bites\\src\\OgreTrays.cpp": {
+      "sha1": "54bcd6a31f9eba3cdb9c0488eee2ef817934029b",
+      "engine_commit": "b74c0615c349b06dccb09b6d96f976bc56bb9a25",
+      "engine_commit_verified": true
+    },
+    "D:\\dev\\game engine source code\\ogre\\RenderSystems\\GL\\src\\nvparse\\_vs1.0_parser.cpp": {
+      "sha1": "8eae5a2054fccdb7a7575d96465d954ba18ea8c3",
+      "engine_commit": "b74c0615c349b06dccb09b6d96f976bc56bb9a25",
+      "engine_commit_verified": true
+    }
+  },
+  "inference_code_changes_after_run_start": {
+    "src/inference/fixing.py": {
+      "run_start_sha256": "f243f3f333fea6625691cb508cc8b4a8fb6b0261b35fb455a31c24b103ea6306",
+      "current_sha256": "0176c1f4af3df186d8d16b057ac60f62c064f52ab6ecbbceee857b1921e53fd1"
+    }
+  },
+  "current_candidate_postprocessing_preserves_every_neural_candidate": true,
+  "all_repair_requests_match_detector_predictions": true,
+  "invalid_unsupported_truncated_never_pass": true,
+  "pipeline_passes": 7,
+  "same_cohort_oracle_adapter": {
+    "rows": 20,
+    "passes": 12,
+    "predictions_sha256": "89209579cb9f4de207e6786dca1602f4c86b74b5eab3fd309a6590e30afe2b1a"
+  }
+}

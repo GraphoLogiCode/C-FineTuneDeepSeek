@@ -1,0 +1,103 @@
+{
+  "engines_root": "D:/dev/game engine source code",
+  "work_dir": "data/collect",
+  "dataset_dir": "data/collected",
+
+  "source_extensions": [".cpp", ".cc", ".cxx", ".h", ".hpp", ".hh", ".hxx"],
+  "max_file_kb": 512,
+
+  "exclude_dir_names": [
+    ".git", "thirdparty", "third_party", "third-party", "3rdparty", "external", "externals",
+    "extlibs", "vendor", "vendored", "deps", "test", "tests", "unittest", "unittests",
+    "sample", "samples", "example", "examples", "doc", "docs", "doxygen",
+    "template", "templates", "tools"
+  ],
+
+  "engines": {
+    "cafu":      {"exclude": ["ExtLibs/", "Doxygen/"]},
+    "cocos2d-x": {"exclude": ["cocos/scripting/lua-bindings/auto/", "cocos/editor-support/spine/"]},
+    "Defold":    {"exclude": ["editor/", "com.dynamo.cr/", "scripts/", "engine/lua/", "engine/sdk/", "engine/testmain/",
+                              "engine/dlib/src/mbedtls/", "engine/dlib/src/stb/", "engine/dlib/src/zip/", "engine/dlib/src/jc/"]},
+    "Esoterica": {"exclude": []},
+    "godot":     {"exclude": ["misc/"]},
+    "irrlicht":  {"exclude": ["source/Irrlicht/aesGladman/", "source/Irrlicht/bzip2/", "source/Irrlicht/jpeglib/",
+                              "source/Irrlicht/libpng/", "source/Irrlicht/lzma/", "source/Irrlicht/zlib/", "source/Irrlicht/KHR/"]},
+    "nebula":    {"exclude": ["code/addons/tinyxml/"], "force_include": ["code/foundation/foundation/stdneb.h"]},
+    "ogre":      {"exclude": ["OgreMain/src/zip/", "Media/", "CMake/"], "defines": ["OGRE_RESOURCEMANAGER_STRICT=2"]},
+    "spring":    {"exclude": ["rts/lib/", "rts/build/", "rts/builds/", "AI/"]},
+    "Torque":    {"exclude": ["Engine/lib/", "Engine/bin/", "Engine/source/sqlite/", "Engine/source/testing/"],
+                  "include_dirs": ["Engine/lib/tinyxml2"]}
+  },
+
+  "scan": {
+    "jobs": 0,
+    "timeout_seconds": 240,
+    "std_candidates": ["c++17", "c++20", "c++23", "c++14"],
+    "calibration_files": 24,
+    "extra_args": ["-fno-delayed-template-parsing", "-ferror-limit=0", "-Wno-everything", "-fsyntax-only"],
+    "max_include_dirs": 300,
+    "checks": [
+      "-*", "bugprone-*", "performance-*", "readability-*", "modernize-*", "cppcoreguidelines-*", "misc-*", "portability-*",
+      "-misc-include-cleaner", "-misc-header-include-cycle", "-readability-identifier-naming",
+      "-modernize-use-trailing-return-type",
+      "-cppcoreguidelines-avoid-magic-numbers", "-cppcoreguidelines-avoid-c-arrays",
+      "-cppcoreguidelines-narrowing-conversions", "-cppcoreguidelines-explicit-virtual-functions",
+      "-cppcoreguidelines-macro-to-enum", "-cppcoreguidelines-noexcept-destructor",
+      "-cppcoreguidelines-noexcept-move-operations", "-cppcoreguidelines-noexcept-swap",
+      "-cppcoreguidelines-non-private-member-variables-in-classes",
+      "-cppcoreguidelines-use-default-member-init", "-cppcoreguidelines-c-copy-assignment-signature"
+    ]
+  },
+
+  "units": {
+    "min_lines": 5,
+    "max_lines": 400
+  },
+
+  "labels": {
+    "include": [
+      "readability-function-size", "readability-function-cognitive-complexity",
+      "readability-else-after-return", "readability-simplify-boolean-expr",
+      "readability-avoid-nested-conditional-operator", "readability-redundant-control-flow",
+      "readability-misleading-indentation", "readability-suspicious-call-argument",
+      "readability-convert-member-functions-to-static", "readability-make-member-function-const",
+      "readability-non-const-parameter", "readability-container-size-empty",
+      "performance-*", "bugprone-*",
+      "misc-no-recursion", "misc-unused-parameters", "misc-redundant-expression",
+      "cppcoreguidelines-owning-memory", "cppcoreguidelines-no-malloc", "cppcoreguidelines-init-variables",
+      "cppcoreguidelines-avoid-goto",
+      "cppcoreguidelines-prefer-member-initializer", "cppcoreguidelines-slicing"
+    ],
+    "exclude": ["bugprone-easily-swappable-parameters", "bugprone-reserved-identifier", "bugprone-macro-parentheses"],
+    "aliases": {
+      "cppcoreguidelines-avoid-magic-numbers": "readability-magic-numbers",
+      "cppcoreguidelines-avoid-c-arrays": "modernize-avoid-c-arrays",
+      "cppcoreguidelines-narrowing-conversions": "bugprone-narrowing-conversions",
+      "hicpp-braces-around-statements": "readability-braces-around-statements"
+    },
+    "thresholds": {"lines": 80, "parameters": 6, "nesting": 4, "cognitive": 25},
+    "min_label_count": 30
+  },
+
+  "fixes": {
+    "include": ["*"],
+    "exclude": [
+      "misc-const-correctness", "misc-use-internal-linkage", "misc-use-anonymous-namespace", "misc-include-cleaner",
+      "modernize-use-nodiscard", "modernize-use-trailing-return-type",
+      "readability-identifier-*", "readability-uppercase-literal-suffix", "readability-implicit-bool-conversion",
+      "bugprone-reserved-identifier", "cppcoreguidelines-pro-*"
+    ]
+  },
+
+  "dataset": {
+    "splits": {"test": ["ogre", "spring"], "val": ["irrlicht"]},
+    "eligibility": {"train": "relaxed", "eval": "strict"},
+    "min_code_tokens": 30,
+    "max_code_tokens": 2048,
+    "max_units_per_engine": 6000,
+    "clean_per_smelly": 1.0,
+    "length_bins": 8,
+    "max_fix_pairs_per_engine": 3000,
+    "seed": 42
+  }
+}

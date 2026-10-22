@@ -9,9 +9,15 @@ The project fine-tunes [`deepseek-ai/deepseek-coder-1.3b-instruct`](https://hugg
 
 ## Status
 
-The work was done in July 2025 and paused. It is **not in a working state**: an audit in October 2026 found that the adapters did not learn the intended task and that no evaluation produced a valid score. The causes are in the dataset and the training setup, and are documented with measurements in [docs/AUDIT.md](docs/AUDIT.md). Read that before reviewing the code.
+The work was done in July 2025 and paused. An audit in October 2026 found that the 2025 adapters did not learn the intended task and that no evaluation produced a valid score. The causes were in the dataset and the training setup, and are documented with measurements in [docs/AUDIT.md](docs/AUDIT.md). The notebook and the scripts under `src/inference/` belong to that 2025 work.
 
-A cleaned detection dataset has since been rebuilt from the original data; [docs/DATASET.md](docs/DATASET.md) describes it and its limits. The adapters have not been retrained on it. There is no usable fixing dataset.
+Since then:
+
+- **New data.** [docs/COLLECTION.md](docs/COLLECTION.md) describes a command-line pipeline that scans the engine sources with clang-tidy and produces a detection dataset (34,433 functions) and a fixing dataset (25,245 pairs), split by engine.
+- **A working detection adapter.** [docs/TRAINING.md](docs/TRAINING.md) describes the fine-tuning run on the new detection data. On two engines held out from training it reaches 85.2% accuracy on "does any check apply" and a micro F1 of 0.766 over the individual checks, against 56.7% and 0.133 for a length-based baseline. The reference labels are clang-tidy's findings, not human judgements.
+- **Repair pilot.** [docs/FIXING.md](docs/FIXING.md) describes the new fixing adapter, a local repair demo, and independent full-source static validation. [Measured results](docs/FIXING_RESULTS.md) compare the model with the base model and tool controls. This is a restricted pilot; static passes do not establish behavioral correctness or paper readiness.
+- **Not done:** labels have not been mapped to game-specific smells.
+- **Cleaned 2025 data.** [docs/DATASET.md](docs/DATASET.md) describes what could be salvaged from the original data, and why its labels are weak.
 
 ## Repository layout
 
@@ -20,22 +26,31 @@ notebooks/
   DeepSeek_Coder_1.3B_FineTuned.ipynb   main notebook: data prep, training, merging, evaluation
   scratch/                              early experiments (LoRA smoke test, saved cells)
 src/
-  inference/                            three stand-alone inference scripts for the adapters
-  evaluation/advanced_evaluation.py     metric code (detection P/R/F1, fixing BLEU/ROUGE)
-  testing/simple_test.py                quick load-and-generate check
+  training/train_lora.py                LoRA fine-tuning on the collected data
+  evaluation/evaluate_detection.py      scores a model on the collected detection data, with baselines
+  evaluation/advanced_evaluation.py     2025 metric code (detection P/R/F1, fixing BLEU/ROUGE)
+  inference/                            2025: three stand-alone inference scripts for the old adapters
+  testing/simple_test.py                2025: quick load-and-generate check
 scripts/
-  build_clean_dataset.py                rebuilds and verifies data/clean/detection
+  collect/                              new data collection: clang-tidy scan -> functions -> datasets
+  build_clean_dataset.py                rebuilds and verifies data/clean/detection from the 2025 data
   audit/                                scripts behind the numbers in docs/
   plot_architecture.py                  draws the pipeline diagram
 docs/
   AUDIT.md                              findings and recommended next steps
-  DATASET.md                            the clean detection dataset: format, use, label quality
+  COLLECTION.md                         the new collection pipeline: how to run it, what it produces
+  TRAINING.md                           fine-tuning on the collected data: setup, scoring, results
+  DATASET.md                            the cleaned 2025 detection dataset: format, use, label quality
+  RELATED_WORK.md                       reading list on detecting code smells with language models
   DeepSeek_Coder_1.3B_FineTuned.html    static export of the main notebook
 results/
-  figures/                              loss curves and sample outputs
-  evaluation_csvs/                      per-example outputs from early evaluation runs
-  inference_results/                    metrics from the last evaluation run (all zero, see audit)
-requirements.txt
+  collected_detection/                  metrics and predictions of the October 2026 runs
+  figures/                              2025: loss curves and sample outputs
+  evaluation_csvs/                      2025: per-example outputs from early evaluation runs
+  inference_results/                    2025: metrics from the last evaluation run (all zero, see audit)
+requirements.txt                        2025 training and notebook environment
+requirements-collect.txt                collection pipeline; installs clang-tidy, needs no PyTorch
+requirements-train.txt                  fine-tuning and scoring on the collected data
 ```
 
 ## What is not in this repository
@@ -45,7 +60,10 @@ These are kept locally and ignored by git:
 | Path | Size | Contents |
 | --- | --- | --- |
 | `data/processed/{detection,fixing}/{train,val}` | 0.5 GB | The July 2025 datasets (16,720 train / 4,180 val rows per task), with the old system prompt baked in |
-| `data/clean/detection/` | 46 MB | The cleaned detection dataset (9,302 train / 1,163 val / 1,163 test rows) |
+| `data/clean/detection/` | 46 MB | The cleaned 2025 detection dataset (9,302 train / 1,163 val / 1,163 test rows) |
+| `data/collect/` | 0.4 GB | Scan results and extracted functions per engine, from the collection pipeline |
+| `data/collected/` | 136 MB | The newly collected detection and fixing datasets |
+| `.venv/` | 0.3 GB | Environment for the collection pipeline, including clang-tidy |
 | `models/` | 14.7 GB | LoRA adapters, checkpoints and merged models |
 
 The raw JSONL files the datasets were built from are no longer available. They were generated with clang-tidy and tree-sitter from ten open-source engines: Cafu, cocos2d-x, Defold, Esoterica, Godot, Irrlicht, Nebula, OGRE, Spring and Torque.
@@ -73,7 +91,30 @@ pip install -r requirements.txt
 
 The scripts use paths relative to the repository root.
 
-Rebuild the clean dataset (needs `data/processed/`):
+For an interactive inference demo and a step-by-step study guide, see
+[docs/DETECTION_DEMO.md](docs/DETECTION_DEMO.md). With the demo environment installed:
+
+```powershell
+.venv-demo\Scripts\python.exe demo\detection_app.py --warmup
+```
+
+Open http://127.0.0.1:7860 to inspect prompts, live model output and parsed checks,
+or try an experimental class/type context input.
+
+Collect a fresh dataset from the engine sources (needs the engines on disk and `requirements-collect.txt`; see [docs/COLLECTION.md](docs/COLLECTION.md)):
+
+```bash
+python scripts/collect/run_pipeline.py
+```
+
+Fine-tune and score on the collected detection data (needs `requirements-train.txt` and a GPU; see [docs/TRAINING.md](docs/TRAINING.md)):
+
+```bash
+python src/training/train_lora.py
+python src/evaluation/evaluate_detection.py --name lora --adapter models/collected_detection_lora
+```
+
+Rebuild the cleaned 2025 dataset (needs `data/processed/`):
 
 ```bash
 python scripts/build_clean_dataset.py
@@ -92,11 +133,12 @@ python scripts/audit/audit_lengths_and_leakage.py
 python scripts/audit/audit_labels.py
 python scripts/audit/read_training_args.py
 python scripts/audit/audit_clean_dataset.py
+python scripts/audit/audit_collected_units.py     # for the newly collected data
 ```
 
 ## Known issues
 
-Summarised from [docs/AUDIT.md](docs/AUDIT.md) and [docs/DATASET.md](docs/DATASET.md):
+These concern the 2025 models and data, summarised from [docs/AUDIT.md](docs/AUDIT.md) and [docs/DATASET.md](docs/DATASET.md). The limits of the newly collected data are listed in [docs/COLLECTION.md](docs/COLLECTION.md#limits).
 
 - The answer was truncated out of a large share of training samples.
 - The loss was computed over the whole prompt, of which the answer is a small fraction.
